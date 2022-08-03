@@ -1,0 +1,10 @@
+# directories
+node_modules/
+build/
+.vscode/
+dist/
+
+#files
+.env
+npm-debug.log*
+.DS_Store
