@@ -1,5 +1,6 @@
 require("dotenv").config();
 const webpack = require("webpack");
+const Dotenv = require("dotenv-webpack");
 const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 
@@ -63,6 +64,10 @@ module.exports = {
     }),
     new webpack.ProvidePlugin({
       React: "react",
+    }),
+    new Dotenv({
+      path: "./.env", // Path to .env file (this is the default)
+      systemvars: true, //load all system variables as well (useful for CI purposes)
     }),
   ],
   resolve: {

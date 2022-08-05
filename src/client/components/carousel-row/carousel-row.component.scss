@@ -1,0 +1,49 @@
+.row {
+  margin-left: 20px;
+  color: white;
+
+  .row__posters {
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    display: flex;
+    overflow-x: scroll;
+    padding: 20px;
+
+    .row__poster {
+      position: relative;
+      width: 150px;
+      margin-right: 10px;
+      cursor: pointer;
+      transition: transform 450ms;
+      &.row__poster:hover {
+        transform: scale(1.2);
+        .row__poster--overlay {
+          display: block;
+        }
+      }
+
+      img {
+        width: 150px;
+        object-fit: contain;
+      }
+
+      .row__poster--overlay {
+        position: absolute;
+        top: 0;
+        display: none;
+        width: 150px;
+        height: -webkit-fill-available;
+        line-height: 220px;
+        text-align: center;
+        font-size: 1.3rem;
+        color: #fff;
+        outline: none;
+        border: none;
+        font-weight: 500;
+        background-color: rgba(51, 51, 51, 0.5);
+        transition: all 450ms;
+      }
+    }
+  }
+}
