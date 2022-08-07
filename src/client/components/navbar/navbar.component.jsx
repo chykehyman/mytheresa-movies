@@ -1,4 +1,5 @@
 import "./navbar.component.scss";
+import React from "react";
 import { Link } from "react-router-dom";
 import { AiOutlineReconciliation } from "react-icons/ai";
 import useLocalStorage from "../../hooks/localStorageHook";
@@ -23,7 +24,12 @@ const NavbarComponent = () => {
       <Link to="/wish-list">
         <button type="button" className="navbar__wishlist-icon">
           <AiOutlineReconciliation />
-          <span className="navbar__wishlist-item-qty">{wishListCount}</span>
+          <span
+            data-testid="wish-list-count"
+            className="navbar__wishlist-item-qty"
+          >
+            {wishListCount}
+          </span>
         </button>
       </Link>
     </nav>

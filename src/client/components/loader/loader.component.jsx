@@ -1,6 +1,6 @@
-import { Circles } from "react-loader-spinner";
-
 import "./loader.component.scss";
+import React from "react";
+import { Circles } from "react-loader-spinner";
 
 const LoaderComponent = ({ message }) => {
   return (

@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react";
+import React, { lazy, Suspense } from "react";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { Navigate, Route, Routes } from "react-router-dom";
 
