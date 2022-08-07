@@ -1,15 +1,17 @@
+@import "styles/variables";
+
 .footer {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   line-height: 3rem;
-  color: white;
-  padding: 30px;
+  color: $white;
+  padding: 1.875rem;
 
   .icons {
-    font-size: 30px;
+    font-size: 1.875rem;
     display: flex;
-    gap: 10px;
+    gap: 0.625rem;
   }
 }

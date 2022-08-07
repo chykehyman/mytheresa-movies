@@ -1,0 +1,7 @@
+@import "styles/variables";
+
+.movie-trailer__container {
+  & > p {
+    color: $eastern-blue;
+  }
+}

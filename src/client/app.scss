@@ -1,9 +1,16 @@
+@import "./assets/scss/variables";
+@import "./assets/scss/mixins";
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
 }
+body {
+  font-size: 16px;
+  background-color: $background-color;
+}
 .app {
-  background-color: #111;
+  min-height: 100vh;
 }

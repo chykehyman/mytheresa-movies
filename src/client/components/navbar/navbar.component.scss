@@ -1,7 +1,8 @@
+@import "styles/variables";
+
 .navbar {
-  height: 60px;
+  height: 3.75rem;
   color: white;
-  background-color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,13 +15,14 @@
 
   .logo {
     img {
-      width: 15px;
-      height: 15px;
-      margin-right: 5px;
+      width: 0.9375rem;
+      height: 0.9375rem;
+      margin-right: 0.3125rem;
     }
     a {
       text-decoration: none;
-      color: white;
+      color: $eastern-blue;
+      font-weight: 600;
     }
   }
 
@@ -29,25 +31,26 @@
       transform: scale(1.1, 1.1);
     }
 
-    font-size: 30px;
+    position: relative;
+    font-size: 1.875rem;
     color: white;
     cursor: pointer;
-    position: relative;
-    transition: transform 0.4s ease;
     border: none;
     background-color: transparent;
+    transition: transform 0.4s ease;
 
     .navbar__wishlist-item-qty {
       position: absolute;
-      right: -8px;
-      font-size: 14px;
-      color: #eee;
-      background-color: #f02d34;
-      width: 18px;
-      height: 18px;
+      top: -2px;
+      right: -0.6875rem;
+      font-size: 0.8125rem;
+      color: $white;
+      background-color: $pomegranate;
+      width: 1.5rem;
       border-radius: 50%;
       text-align: center;
       font-weight: 600;
+      padding: 0.25rem;
     }
   }
 }

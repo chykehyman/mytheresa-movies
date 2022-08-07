@@ -1,0 +1,10 @@
+@import "./variables";
+
+@mixin h3-common-styles {
+  font-size: 1.25rem;
+  padding: 0.625rem;
+  background: $eastern-blue;
+  width: max-content;
+  border-radius: 5px;
+  color: white;
+}

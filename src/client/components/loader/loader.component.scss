@@ -1,0 +1,22 @@
+@import "styles/variables";
+
+.loader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+
+  svg {
+    fill: $eastern-blue;
+    height: 50px;
+    width: 200px;
+  }
+
+  .loader-text {
+    color: $white;
+    font-size: 0.875rem;
+    margin-top: 0.625rem;
+  }
+}

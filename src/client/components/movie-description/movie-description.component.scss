@@ -1,0 +1,85 @@
+@import "styles/variables";
+
+.movie-description__main {
+  display: flex;
+  justify-content: space-between;
+
+  img {
+    width: 20.0625rem;
+    height: 25.875rem;
+    border-radius: 0.3125rem;
+  }
+
+  .movie-description__main--content {
+    display: flex;
+    flex-direction: column;
+
+    padding-left: 1rem;
+    color: rgb(202, 198, 198);
+
+    h1 {
+      font-size: 2.7rem;
+      margin: 0.625rem 0;
+    }
+    p {
+      max-width: 35rem;
+      color: $silver-chalice;
+    }
+
+    span.genre {
+      color: $silver;
+      border-radius: 1.25rem;
+      font-size: 0.75rem;
+      padding: 0.3125rem 0.8125rem;
+      margin-right: 0.625rem;
+      background: $ebony-clay;
+    }
+
+    section.rating {
+      font-weight: 600;
+      margin-top: 0.75rem;
+      margin-bottom: 1.875rem;
+      span:first-of-type {
+        border-radius: 0.5625rem;
+        padding: 0.3125rem 0.5rem;
+        background: $bright-sun;
+        font-size: 0.875rem;
+        color: $cod-gray;
+        margin-right: 0.3125rem;
+      }
+      span:last-of-type {
+        font-size: 0.75rem;
+      }
+    }
+
+    .extra--info {
+      margin-top: 1.875rem;
+      line-height: 1.4rem;
+      & > p {
+        font-size: 1rem;
+        font-weight: 600;
+        color: $silver;
+
+        span {
+          color: $eastern-blue;
+        }
+      }
+    }
+
+    .wish--list_action {
+      margin-top: 1.25rem;
+      svg {
+        &:hover {
+          background: darken($color: $white, $amount: 10%);
+        }
+        background: $white;
+        width: 3.7rem;
+        height: 2.4rem;
+        padding: 0.3125rem;
+        border-radius: 0.5rem;
+        margin-right: 0.3125rem;
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import "./carousel-row.component.scss";
 
-import axiosInstance from "../../api/axios";
-import { baseImageUrl } from "../../constants";
+import axiosInstance from "../../api/api.service";
+import { BASE_IMAGE_URL } from "../../constants";
+import { Link } from "react-router-dom";
 
-const CarouselRow = ({ title, fetchUrl }) => {
+const CarouselRowComponent = ({ title, fetchUrl }) => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -17,23 +18,24 @@ const CarouselRow = ({ title, fetchUrl }) => {
 
   return (
     <div className="row">
-      <h2>{title}</h2>
+      <h3>{title}</h3>
       <div className="row__posters">
         {movies.map((movie) => (
-          <div key={movie.id} className="row__poster">
-            <img
-              key={movie.id}
-              src={`${baseImageUrl}${movie?.poster_path}`}
-              alt={movie.name}
-            />
-            <div className="row__poster--overlay">
-              {new Date(movie?.release_date).getFullYear() || 2022}
+          <Link to={`/movies/${movie.id}`} key={movie.id}>
+            <div className="row__poster">
+              <img
+                src={`${BASE_IMAGE_URL}${movie?.poster_path}`}
+                alt={movie.name}
+              />
+              <div className="row__poster--overlay">
+                {new Date(movie?.release_date).getFullYear() || 2022}
+              </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
   );
 };
 
-export default CarouselRow;
+export default CarouselRowComponent;

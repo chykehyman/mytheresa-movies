@@ -1,6 +1,12 @@
+@import "styles/mixins";
+
 .row {
-  margin-left: 20px;
-  color: white;
+  margin-left: 1.25rem;
+  color: $white;
+
+  h3 {
+    @include h3-common-styles;
+  }
 
   .row__posters {
     &::-webkit-scrollbar {
@@ -8,12 +14,12 @@
     }
     display: flex;
     overflow-x: scroll;
-    padding: 20px;
+    padding: 1.25rem;
 
     .row__poster {
       position: relative;
-      width: 150px;
-      margin-right: 10px;
+      width: 9.375rem;
+      margin-right: 0.625rem;
       cursor: pointer;
       transition: transform 450ms;
       &.row__poster:hover {
@@ -24,7 +30,7 @@
       }
 
       img {
-        width: 150px;
+        width: 9.375rem;
         object-fit: contain;
       }
 
@@ -32,12 +38,12 @@
         position: absolute;
         top: 0;
         display: none;
-        width: 150px;
+        width: 9.375rem;
         height: -webkit-fill-available;
-        line-height: 220px;
+        line-height: 13.75rem;
         text-align: center;
         font-size: 1.3rem;
-        color: #fff;
+        color: $white;
         outline: none;
         border: none;
         font-weight: 500;

@@ -1,13 +1,16 @@
-import "./home.page.scss";
+import "./movies.page.scss";
 import { useState, useEffect } from "react";
 import { AiFillPlayCircle, AiOutlineInfoCircle } from "react-icons/ai";
 
-import axiosInstance, { MOVIE_URL } from "../../api/axios";
-import CarouselRow from "../../components/carousel-row/carousel-row.component";
-import { baseImageUrl } from "../../constants";
+import axiosInstance, { MOVIE_URL } from "../../api/api.service";
+import CarouselRowComponent from "../../components/carousel-row/carousel-row.component";
+import { BASE_IMAGE_URL } from "../../constants";
+import { truncateText } from "../../helpers";
+import LoaderComponent from "../../components/loader/loader.component";
 
-const HomePage = () => {
+const MoviesPage = () => {
   const [trendingMovie, setTrendingMovie] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -16,19 +19,19 @@ const HomePage = () => {
       const randomTrendingMovie =
         trendingMovies[Math.floor(Math.random() * trendingMovies.length - 1)];
       setTrendingMovie(randomTrendingMovie);
+      setIsLoading(false);
     };
     fetchData();
   }, []);
 
-  const truncate = (str, n) =>
-    str?.length > n ? str.substr(0, n - 1) + "..." : str;
+  if (isLoading) return <LoaderComponent message="Loading movies" />;
 
   return (
     <>
       <header
         className="banner"
         style={{
-          backgroundImage: `url(${baseImageUrl}${trendingMovie?.backdrop_path})`,
+          backgroundImage: `linear-gradient(rgb(0,0,0,0.7), rgb(0,0,0,0.1)), url(${BASE_IMAGE_URL}${trendingMovie?.backdrop_path})`,
         }}
       >
         <div className="banner__content">
@@ -36,7 +39,7 @@ const HomePage = () => {
             {trendingMovie?.title || trendingMovie?.original_title}
           </h1>
           <h3 className="banner__description">
-            {truncate(trendingMovie?.overview, 145)}
+            {truncateText(trendingMovie?.overview, 145)}
           </h3>
           <div className="banner__buttons">
             <button className="banner__button">
@@ -49,11 +52,14 @@ const HomePage = () => {
         </div>
         <div className="banner--fadeBottom" />
       </header>
-      <CarouselRow title="Trending Now" fetchUrl={MOVIE_URL.trending} />
-      <CarouselRow title="Action Series" fetchUrl={MOVIE_URL.action} />
-      <CarouselRow title="Horror Series" fetchUrl={MOVIE_URL.horror} />
+      <CarouselRowComponent
+        title="Trending Now"
+        fetchUrl={MOVIE_URL.trending}
+      />
+      <CarouselRowComponent title="Action Series" fetchUrl={MOVIE_URL.action} />
+      <CarouselRowComponent title="Horror Series" fetchUrl={MOVIE_URL.horror} />
     </>
   );
 };
 
-export default HomePage;
+export default MoviesPage;

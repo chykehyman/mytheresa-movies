@@ -1,7 +1,7 @@
 import "./footer.component.scss";
 import { AiFillInstagram, AiOutlineTwitter } from "react-icons/ai";
 
-const Footer = () => (
+const FooterComponent = () => (
   <footer className="footer">
     <p>2022 MyTheresa Movies - All rights reserved</p>
     <p className="icons">
@@ -11,4 +11,4 @@ const Footer = () => (
   </footer>
 );
 
-export default Footer;
+export default FooterComponent;

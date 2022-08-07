@@ -1,0 +1,29 @@
+@import "styles/mixins";
+
+.wish-list__container {
+  margin-top: 3%;
+  min-height: calc(100vh - 14.4125rem);
+
+  h3 {
+    @include h3-common-styles;
+    margin-left: 1.5rem;
+  }
+
+  .wish-list__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(9.375rem, 1fr));
+    justify-items: center;
+    grid-gap: 0.625rem;
+    padding: 0.75rem 6.8125rem;
+
+    .wish-list__grid--box {
+      transition: transform 450ms;
+      &:hover {
+        transform: scale(1.2);
+      }
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
